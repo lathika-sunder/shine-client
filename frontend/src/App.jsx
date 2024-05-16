@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Homecomp from "./components/HomeComp/Homecomp";
+import { ClerkProvider, SignedIn } from "@clerk/clerk-react";
+import OrderBookingPage from "./pages/OrderBookingPage/OrderBookingPage";
+import Header from "./components/Header/Header";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const queryClient = new QueryClient();
+  const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <QueryClientProvider client={queryClient}>
+        <Header />
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Homecomp />} />
+            <Route exact path="/order" element={<OrderBookingPage />} />
+
+            <Route exact path="/dashboard" element={<Dashboard />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </ClerkProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,44 @@
+.logo-container{
+    img{
+        width: 8%;
+        margin: 2vh;
+    }
+}
+
+.home-page{
+    margin:5vh;
+
+    .hero-image{
+        height: 60vh;
+    }
+
+    .home-page-content{
+        margin-top: 5vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hero-btn{
+        color: var(--color-secondary);
+        background-color: var(--bg-primary);
+        padding: 2vh;
+        cursor: pointer;
+        border-radius: 2vh;
+        font-weight: bold;
+    }
+    .hero-content{
+        width: 55vh;
+        margin-left:5vh ;
+        p{
+            font-size: 2vh;
+            font-style: italic;
+            /* font-weight: 100; */
+            line-height: 2;
+            color: var(--color-secondary)
+        }
+        h1{
+            font-size: 10vh;
+        }
+    }
+}
+
