@@ -13,7 +13,7 @@ const Header = () => {
     <header className="header-comp">
         <div className="header">
         <div className="logo-container">
-          <img src={logo}></img>
+          <img className="logo-img" src={logo}></img>
         </div>
       </div>
       <SignedOut>

@@ -4,6 +4,13 @@
     justify-content: space-between;
     margin:0vh 5vh 0vh 5vh;
 }
-.profile-btn{
-   
+@media (max-width:768px)
+{
+  .header-comp{
+    
+    .logo-img{
+      height: 8vh;
+      width: 100%;
+    }
   }
+}

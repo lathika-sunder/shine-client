@@ -109,3 +109,59 @@
     cursor: pointer;
   }
 }
+
+@media (max-width:768px)
+{
+  .order-booking-comp{
+    .grid-columns{
+      flex-direction: column;
+    }
+    .column{
+      width: 100%;
+    }
+    .time-slots{
+      padding: 0vh;
+      margin: 0vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .slot-container{
+      width: 30%;
+      margin: 1vh;
+      p{font-size: xx-small;}
+    }
+    font-size: xx-small;
+
+    .service-item{
+      margin: 1vh;
+      width: 45vh;
+    }
+
+    .locations{
+      p{
+        font-size: xx-small;
+      }
+      display: flex;
+      margin-left: 5vh;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+    }
+
+    .column{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      button{
+        text-align: center;
+        align-self: center;
+      }
+    }
+  }
+}

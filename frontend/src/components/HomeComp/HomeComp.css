@@ -42,3 +42,25 @@
     }
 }
 
+@media (max-width:768px){
+    .home-page{
+        .home-page-content{
+            display: flex;
+        flex-direction: column;
+        }
+
+        .hero-image{
+            height: 30vh;
+            margin: 0vh;
+            padding: 0vh;
+        }
+        .hero-content{
+            margin-top: 0vh;
+            padding: 0vh;
+
+            h1{
+                margin: 0vh;
+            }
+        }
+    }
+}
