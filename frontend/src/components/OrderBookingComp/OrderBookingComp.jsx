@@ -44,7 +44,7 @@ const OrderBookingComp = () => {
 
     axios
       .post(
-        "http://localhost:4040/api/v1/shine/bookings/postBooking",
+        "https://shine-server.vercel.app/api/v1/shine/bookings/postBooking",
         bookingDetails
       )
       .then(() => {

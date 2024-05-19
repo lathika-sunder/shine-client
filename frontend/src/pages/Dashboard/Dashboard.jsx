@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   const fetchBookings = async (userId) => {
     const response = await axios.get(
-      `http://localhost:4040/api/v1/shine/bookings/getBookingsOfUser/${userId}`
+      `https://shine-server.vercel.app/api/v1/shine/bookings/getBookingsOfUser/${userId}`
     );
     return response.data;
   };
