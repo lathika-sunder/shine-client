@@ -8,6 +8,9 @@ import { ClerkProvider, SignedIn } from "@clerk/clerk-react";
 import OrderBookingPage from "./pages/OrderBookingPage/OrderBookingPage";
 import Header from "./components/Header/Header";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoutes/ProtectedRoute";
+import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
+import PrivateRoute from "./components/ProtectedRoutes/ProtectedRoute";
 
 function App() {
   const queryClient = new QueryClient();
@@ -23,7 +26,11 @@ function App() {
             <Route exact path="/order" element={<OrderBookingPage />} />
 
             <Route exact path="/dashboard" element={<Dashboard />}></Route>
+            <Route element={<PrivateRoute/>}>
+            <Route exact path="/admin-dashboard" element={<AdminDashboard />} />
+          </Route>
           </Routes>
+          
         </BrowserRouter>
       </QueryClientProvider>
     </ClerkProvider>
