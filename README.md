@@ -76,7 +76,7 @@ Shine is a MERN stack application that allows users to book car wash and service
 
 1. Clone the server repository:
     ```sh
-    git clone https://github.com/your-username/shine-server.git
+    git clone https://github.com/lathika-sunder/shine-server.git
     cd shine-server
     ```
 
