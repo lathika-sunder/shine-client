@@ -134,5 +134,5 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For any questions or suggestions, feel free to contact us at [lathikasunder11@gmail.com].
+For any questions or suggestions, feel free to contact me at ![my mail](lathikasunder11@gmail.com).
 
