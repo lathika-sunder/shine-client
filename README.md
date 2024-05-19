@@ -63,8 +63,8 @@ Shine is a MERN stack application that allows users to book car wash and service
 
 3. Create a `.env` file in the root directory and add your environment variables:
     ```env
-    REACT_APP_API_URL=http://localhost:5000/api
-    REACT_APP_CLERK_FRONTEND_API=your-clerk-frontend-api
+    
+    VITE_PUBLISHABLE_KEY=your-clerk-frontend-api
     ```
 
 4. Start the development server:
@@ -110,6 +110,9 @@ Admins have the ability to:
 - Manage service slots.
 - Receive notifications for new bookings.
 
+- User mail : abc@gmail.com
+- Password: lathika
+
 ## Planned Schema
 ![WhatsApp Image 2024-05-15 at 21 15 57_be0977cd](https://github.com/lathika-sunder/shine-client/assets/95066409/04120e65-c954-4c60-a86a-4b104d99f867)
 
@@ -118,6 +121,9 @@ Admins have the ability to:
 ![image](https://github.com/lathika-sunder/shine-client/assets/95066409/d359fd31-2a5c-4537-9f43-88e8ebf97df0)
 ![image](https://github.com/lathika-sunder/shine-client/assets/95066409/f6329425-75bb-4f03-876d-d7472f156483)
 ![image](https://github.com/lathika-sunder/shine-client/assets/95066409/543de074-9c99-41ca-b701-6b06ebbf2a19)
+
+### Admin Panel
+![image](https://github.com/lathika-sunder/shine-client/assets/95066409/740aaa3b-e2a0-435e-aec4-48065ed6a76e)
 
 
 
