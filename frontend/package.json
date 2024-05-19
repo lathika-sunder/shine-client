@@ -13,6 +13,8 @@
     "@clerk/clerk-react": "^5.0.7",
     "axios": "^1.6.8",
     "react": "^18.2.0",
+    "react-date-picker": "^11.0.0",
+    "react-datepicker": "^6.9.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "react-query": "^3.39.3",

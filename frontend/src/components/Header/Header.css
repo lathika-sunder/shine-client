@@ -2,14 +2,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin:0vh 5vh 0vh 5vh;
 }
 .profile-btn{
-    background-color: var(--bg-primary);
-    color: var(--color-secondary);
-    padding: 3vh;
-    height: 20vh;
-    border-radius: 25%;
-    border: 1px solid var(--color-secondary);
-    font-size: larger;
-    cursor: pointer;
+   
   }

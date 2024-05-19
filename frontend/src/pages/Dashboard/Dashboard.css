@@ -1,0 +1,41 @@
+.dashboard{
+    
+   
+
+    .bookings{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .booking-item{
+        
+        padding: 1vh;
+        width: 50vh;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5vh;
+        flex-direction: row;
+        justify-content: space-between;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+
+    .booking-service{
+        font-size: 3vh;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .booking-detials p{
+        font-size: xx-small;
+    }
+
+    .title{
+        display: flex;
+        margin-right: calc(10%);
+        justify-content: flex-end;
+        text-decoration: underline;
+    }
+}

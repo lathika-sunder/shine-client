@@ -20,7 +20,7 @@ const Header = () => {
         <SignInButton className="signin-btn" />
       </SignedOut>
       <SignedIn>
-        <UserButton className="profile-btn" />
+        <UserButton className="profile-btn"   />
       </SignedIn>
     </header>
   );

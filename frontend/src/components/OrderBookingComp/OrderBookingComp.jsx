@@ -12,12 +12,13 @@ import carCheck from "../../assets/images/car-check.png";
 import carWash from "../../assets/images/car-wash.png";
 import logo from "../../assets/images/shine-logo.png";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
- 
+import DatePicker from "react-datepicker";
 
 const OrderBookingComp = () => {
   const user = useUser();
+  const navigate = useNavigate();
   const [service, setService] = useState("");
   const [timeSlot, setTimeSlot] = useState("");
   const [location, setLocation] = useState("");
@@ -25,7 +26,6 @@ const OrderBookingComp = () => {
   const handleServiceChange = (selectedService) => {
     setService(selectedService);
     console.log("Service selected:", service);
-    
   };
 
   const handleSlotChange = (selectedSlot) => {
@@ -35,24 +35,30 @@ const OrderBookingComp = () => {
 
   const handleLocationChange = (selectedLocation) => {
     setLocation(selectedLocation);
-    console.log("Selected Location: ",location)
+    console.log("Selected Location: ", location);
   };
   const handleBooking = () => {
     const userId = user.user.id;
     const bookingDetails = { userId, service, timeSlot, location };
-    console.log(bookingDetails)
+    console.log(bookingDetails);
 
-    axios.post('http://localhost:4040/api/v1/shine/postBooking',bookingDetails)
-    .then(()=>{
-      console.log("Booking Success")
-    })
-    .catch((error)=>{
-      console.log("Client side error posting data",error)
-    })
-
+    axios
+      .post(
+        "http://localhost:4040/api/v1/shine/bookings/postBooking",
+        bookingDetails
+      )
+      .then(() => {
+        console.log("Booking Success");
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        console.log("Client side error posting data", error);
+        alert("Please select booking details");
+      });
   };
   return (
     <div className="order-booking-comp">
+      
       <div className="grid-columns">
         <div className="column">
           <div className="services">
@@ -101,32 +107,51 @@ const OrderBookingComp = () => {
         </div>
         <div className="column">
           <div className="time-slots">
-            <div className="slot-container" onClick={()=>handleSlotChange('8-10')}>
+            <div
+              className="slot-container"
+              onClick={() => handleSlotChange("8-10")}
+            >
               <p>
                 <span>8</span>am - <span>10</span>am
               </p>
             </div>
-            <div className="slot-container" onClick={()=>handleSlotChange('10-12')}>
+
+            <div
+              className="slot-container"
+              onClick={() => handleSlotChange("10-12")}
+            >
               <p>
                 <span>10</span>am - <span>12</span>am
               </p>
             </div>
-            <div className="slot-container" onClick={()=>handleSlotChange('12-2')}>
+            <div
+              className="slot-container"
+              onClick={() => handleSlotChange("12-2")}
+            >
               <p>
                 <span>12</span>pm - <span>2</span>pm
               </p>
             </div>
-            <div className="slot-container" onClick={()=>handleSlotChange('2-4')}>
+            <div
+              className="slot-container"
+              onClick={() => handleSlotChange("2-4")}
+            >
               <p>
                 <span>2</span>pm - <span>4</span>am
               </p>
             </div>
-            <div className="slot-container" onClick={()=>handleSlotChange('4-6')}>
+            <div
+              className="slot-container"
+              onClick={() => handleSlotChange("4-6")}
+            >
               <p>
                 <span>4</span>pm - <span>6</span>pm
               </p>
             </div>
-            <div className="slot-container" onClick={()=>handleSlotChange('6-8')}>
+            <div
+              className="slot-container"
+              onClick={() => handleSlotChange("6-8")}
+            >
               <p>
                 <span>6</span>pm - <span>8</span>pm
               </p>
@@ -134,30 +159,38 @@ const OrderBookingComp = () => {
           </div>
 
           <div className="locations">
-            <div className="location" onClick={()=>handleLocationChange('Chennai')}>
+            <div
+              className="location"
+              onClick={() => handleLocationChange("Chennai")}
+            >
               <h2>
                 <FaLocationCrosshairs /> Chennai
               </h2>
             </div>
 
-            <div className="location" onClick={()=>handleLocationChange('Mumbai')}>
+            <div
+              className="location"
+              onClick={() => handleLocationChange("Mumbai")}
+            >
               <h2>
                 <FaLocationCrosshairs /> Mumbai
               </h2>
             </div>
-            <div className="location" onClick={()=>handleLocationChange('Hyderabad')}>
+            <div
+              className="location"
+              onClick={() => handleLocationChange("Hyderabad")}
+            >
               <h2>
                 <FaLocationCrosshairs height={95} />
                 Hyderabad
               </h2>
             </div>
           </div>
+
           <SignedIn>
-            <Link to="/dashboard" onClick={handleBooking}>
-              <button>
-                Book Now <MdNavigateNext color="next-icon" />
-              </button>
-            </Link>
+            <button onClick={handleBooking}>
+              Book Now <MdNavigateNext color="next-icon" />
+            </button>
           </SignedIn>
           <SignedOut>
             <Link to="https://quick-moth-67.accounts.dev/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A5173%2F">
